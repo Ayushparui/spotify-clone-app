@@ -5,6 +5,7 @@ import Player from "./Player"
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { useDataLayerValue } from './DataLayer';
+// import { response } from 'express';
 
 const spotify = new SpotifyWebApi();
 
@@ -24,12 +25,30 @@ function App() {
       })
 
       spotify.setAccessToken(_token);
+
+
       spotify.getMe().then((user) => {
         dispatch({
           type: 'SET_USER',
           user: user
         })
       })
+
+
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists
+        })
+        console.log(playlists)
+      })
+      // .catch((err) => console.log('Playlist err', err))
+      spotify.getPlaylist('37i9dQZEVXcQ9COmYvdajy').then(response => 
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
     }
   }, []);
 

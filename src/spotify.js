@@ -1,11 +1,9 @@
 // https://developer.spotify.com/documentation/web-playback-sdk/quick-start/
 
-
 // https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
 export const authEndpoint = "https://accounts.spotify.com/authorize";
-const clientId = "30ceb2bdd2994f8d854021bb209f2793";
+const clientId = "";
 const redirectUri = "http://localhost:3000/";
-
 
 // Authorization Scopes
 // https://developer.spotify.com/documentation/general/guides/authorization/scopes/
@@ -17,7 +15,6 @@ const scope = [
     "user-top-read",
     "user-modify-playback-state"
 ];
-
 
 export const getTokenFromUrl = () => {
     return window.location.hash
