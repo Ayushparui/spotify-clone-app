@@ -3,7 +3,7 @@
 // https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://spotify-clone-app-gold.vercel.app//";
 
 // Authorization Scopes
 // https://developer.spotify.com/documentation/general/guides/authorization/scopes/
